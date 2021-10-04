@@ -11,7 +11,8 @@
 <head>
     <title>Title</title>
 </head>
-<body>
+<body style="background: #fdead3">
+<jsp:include page="_header.jsp"/>
 <h2>History of operations:</h2>
 <form action="/history">
 

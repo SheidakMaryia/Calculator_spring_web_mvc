@@ -37,6 +37,7 @@ public class OperationService {
             resultBD = resultBD.setScale(3, RoundingMode.DOWN);
             result = resultBD.doubleValue();
         }
+        saveMathOperation(new Operation(num1, num2, operation, result, user));
         return new Operation(num1, num2, operation, result, user);
     }
 }

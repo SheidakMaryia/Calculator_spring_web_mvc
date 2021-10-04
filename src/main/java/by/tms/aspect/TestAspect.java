@@ -1,6 +1,7 @@
 package by.tms.aspect;
 
 import by.tms.entity.User;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -9,12 +10,15 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 @Aspect
 public class TestAspect {
 
     private final Logger logger = LoggerFactory.getLogger(TestAspect.class.getName());
 
-    @Pointcut("execution(public * by.tms.controller.UserController.reg()) && args(user, ..))")
+    @Pointcut("execution(public * by.tms.controller.UserController.reg(..)) && args(user, ..))")
     public void registration(User user){}
 
     @After(value = "registration(user)", argNames = "user")
@@ -23,7 +27,7 @@ public class TestAspect {
     }
 
 
-    @Pointcut("execution(public * by.tms.controller.UserController.auth()) && args(user, ..))")
+    @Pointcut("execution(public * by.tms.controller.UserController.auth(..)) && args(user, ..))")
     public void authorization(User user){}
 
     @After(value = "authorization(user)", argNames = "user")
@@ -32,6 +36,14 @@ public class TestAspect {
     }
 
 
+//    @Pointcut("execution(public * by.tms.service.UserService.save(..)))")
+//    public void loggingOfMethodSave() {}
+//
+//    @After(value = "loggingOfMethodSave()")
+//    public void save(ProceedingJoinPoint jp) throws Throwable {
+//        Object proceed = jp.proceed();
+//        logger.info("Save new user {} ", user.getName());
+//    }
 
 
 
@@ -47,13 +59,7 @@ public class TestAspect {
 //        System.out.println("Bye");
 //    }
 //
-//    @Pointcut("execution(public * by.tms.service.UserService.save(..)) && args(user, ..))")
-//    public void loggingOfMethodSave(User user) {}
-//
-//    @After(value = "loggingOfMethodSave(user)", argNames = "user")
-//    public void save(User user){
-//        logger.info("Save new user {} ", user.getName());
-//    }
+
 
 
 }

@@ -1,9 +1,14 @@
 package by.tms.entity;
 
+import by.tms.utils.ErrorsMessageManager;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Data @AllArgsConstructor @NoArgsConstructor
@@ -13,6 +18,17 @@ public class User {
     private String name;
     private String login;
     private String password;
+
+    public User(String name, String login, String password) {
+        this.name = name;
+        this.login = login;
+        this.password = password;
+    }
+
+    public User(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
 
     @Override
     public boolean equals(Object o) {

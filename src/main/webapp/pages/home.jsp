@@ -9,11 +9,16 @@
 <html>
 <head>
     <title>Home</title>
+
+    <style>
+        body{
+            margin: 0;
+            background: url(https://st3.depositphotos.com/2885805/12847/v/950/depositphotos_128479268-stock-illustration-mathematics-science-concept.jpg) no-repeat center;
+        }
+
+    </style>
 </head>
 <body>
-<a href="/user/reg">Registration</a>
-<a href="/user/auth">Authorization</a>
-
-<p>${messageReg}</p>
+<jsp:include page="_header.jsp"/>
 </body>
 </html>
