@@ -1,11 +1,19 @@
 package by.tms.dto;
 
 import by.tms.utils.ErrorsMessageManager;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 public class UserAllFieldsDTO {
 
     //constrains
