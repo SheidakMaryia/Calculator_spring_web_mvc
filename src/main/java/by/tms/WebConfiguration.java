@@ -47,14 +47,8 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
     }
 
 
-
-
-
-
-
-
     // для работы thymeleaf
-//    @Bean
+  //  @Bean
 //    public ThymeleafViewResolver viewResolver(){
 //        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
 //        viewResolver.setTemplateEngine(templateEngine());
